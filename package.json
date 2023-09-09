@@ -4,7 +4,8 @@
     "pactum": "^3.4.1"
   },
     "scripts": {
-      "test": "mocha test.js"
+      "test-login": "mocha Test-login.js",
+      "test-register": "mocha Test-register.js"
     }
   
 }

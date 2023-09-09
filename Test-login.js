@@ -21,35 +21,33 @@ describe("Teste em API", () => {
     });
 
 
-    it('login informando senha incorreta' , async () => {
-       let response = await spec()
+    it('login informando senha incorreta', async () => {
+        let response = await spec()
             .post(`${baseUrl}/api/login`)
             .withJson({
                 "email": "eve.holt@reqres.in",
                 "password": "teste@123"
             })
             .expectStatus(400)
-    
+
         console.log(response.body)
         console.log(response.statusCode)
     });
- 
-    it('login sem informar senha' , async () => {
-       let response = await spec()
+
+    it('login sem informar senha', async () => {
+        let response = await spec()
             .post(`${baseUrl}/api/login`)
             .withJson({
                 "email": "eve.holt@reqres.in",
             })
             .expectStatus(400)
             .expectJson({
-                "error" : "Missing password"
+                "error": "Missing password"
             })
 
         console.log(response.body)
         console.log(response.statusCode)
     });
-
-
 
 
 })

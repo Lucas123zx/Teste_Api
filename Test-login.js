@@ -49,5 +49,4 @@ describe("Teste em API", () => {
         console.log(response.statusCode)
     });
 
-    ///// teste
 })

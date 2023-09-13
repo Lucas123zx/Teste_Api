@@ -52,4 +52,21 @@ describe("Teste em API", () => {
         console.log(response.body)
     });
 
+    it('registrar informando email inválido', async () => {
+        let response = await spec()
+            .post(`${baseUrl}/api/register`)
+            .withJson({
+                "email": "eve213.com",
+                "password": "pistol"
+            })
+            .expectStatus(400)
+            .expectJson({
+                "error": "Note: Only defined users succeed registration"
+            })
+
+        console.log(response.statusCode)
+        console.log(response.body)
+    });
+
+
 })
